@@ -6,6 +6,7 @@ import java.util.ArrayList;
 
 
 public class Main {
+    public static final String FILE_NAME = "Test_text.txt";
 
     public static void main(String[] args) throws IOException {
         ArrayList<String> lineArray = readFileToStr();
@@ -30,7 +31,7 @@ public class Main {
         ArrayList<String> strList = new ArrayList<>();
 
         try {
-            br = new BufferedReader(new InputStreamReader(new FileInputStream("Test_text.txt"), "Cp1251"));
+            br = new BufferedReader(new InputStreamReader(new FileInputStream(FILE_NAME), "Cp1251"));
         }
         catch (FileNotFoundException e) {
             System.out.println("Невозможно открыть файл");
