@@ -12,13 +12,19 @@ public class Main {
         ArrayList<String> lineArray = readFileToStr();
         int lengthAllLine = 0;
 
+        StringBuilder strBuild = new StringBuilder("");
+
         for (String line : lineArray) {
             System.out.println(line);
         }
         System.out.println("\nИнформация о файле\n");
 
         for (String line : lineArray) {
-            System.out.println("Колличество символов в строке № " + (lineArray.indexOf(line)+1) + "= "+ line.length());
+
+            strBuild.delete(0, strBuild.length());
+            strBuild.append("Колличество символов в строке № ").append(lineArray.indexOf(line)+1).append("= ").append(line.length());
+            System.out.println(strBuild.toString());
+
             lengthAllLine += line.length();
         }
         System.out.println("Колличество символов в файле: " + lengthAllLine);
